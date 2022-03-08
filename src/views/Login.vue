@@ -52,7 +52,7 @@
                     console.log(response)
                     axios
                     .request({
-                        url: 'http://127.0.0.1:8000/api/login',
+                        url: 'http://api.farhandika.com:8000/api/login',
                         method: 'post',
                         data: this.formData,
                         headers: {
