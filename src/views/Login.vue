@@ -47,12 +47,12 @@
             },
             postLogin(){
                 axios
-                .get('http://localhost:8000/sanctum/csrf-cookie')
+                .get('http://api.farhandika.com/sanctum/csrf-cookie')
                 .then(response => {
                     console.log(response)
                     axios
                     .request({
-                        url: 'http://api.farhandika.com:8000/api/login',
+                        url: 'http://api.farhandika.com/api/login',
                         method: 'post',
                         data: this.formData,
                         headers: {
