@@ -46,7 +46,7 @@
                 const token = localStorage.getItem('token')
                 axios
                 .request({
-                    url: 'http://api.farhandika.com/api/quote-single',
+                    url: 'https://api.farhandika.com/api/quote-single',
                     method: 'get',
                     headers: {
                         'Accept': 'application/json',
@@ -68,7 +68,7 @@
                 const token = localStorage.getItem('token')
                 axios
                 .request({
-                    url: 'http://api.farhandika.com/api/quote-show',
+                    url: 'https://api.farhandika.com/api/quote-show',
                     method: 'get',
                     headers: {
                         'Accept': 'application/json',
@@ -90,7 +90,7 @@
                 const token = localStorage.getItem('token')
                 axios
                 .request({
-                    url: 'http://api.farhandika.com/api/logout',
+                    url: 'https://api.farhandika.com/api/logout',
                     method: 'post',
                     headers: {
                         'Accept': 'application/json',
