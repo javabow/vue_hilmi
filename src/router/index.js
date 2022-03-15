@@ -42,11 +42,11 @@ const routes = [
     name: "Dashboard",
     component: Dashboard,
   },
-  {
-    path: "/inventory",
-    name: "Inventory",
-    component: Inventory,
-  },
+  // {
+  //   path: "/inventory",
+  //   name: "Inventory",
+  //   component: Inventory,
+  // },
   {
     path: "/member",
     redirect: "/inventory",

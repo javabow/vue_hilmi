@@ -6,8 +6,9 @@ import router from './router'
 
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
+import JlDatatable from 'jl-datatable'
 
 // createApp(Header).mount('#header')
 // createApp.component('headerAll', Header)
 
-createApp(App).use(router).use(VueSweetalert2).mount('#app')
+createApp(App).use(router).use(JlDatatable).use(VueSweetalert2).mount('#app')

@@ -18,21 +18,21 @@
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
 
-                        <li class="sidebar-item active">
+                        <!-- <li class="sidebar-item active">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
                             </a>
-                        </li>
+                        </li> -->
 
-                        <li class="sidebar-item">
+                        <li class="sidebar-item active">
                             <a href="/member/inventory" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Inventory</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a href="/member/service" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Service</span>
@@ -52,15 +52,17 @@
                                     <a href="component-badge.html">Badge</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
 
-                        <li class="sidebar-item">
-                            <form action="#" method="POST">
-                                <button type="submit" class="sidebar-link" style="border: 0pt;">
-                                    <i class="bi bi-box-arrow-left"></i>
-                                    <span>Logout</span>
-                                </button>
-                            </form>
+                        <li class="sidebar-item" style="padding-top: 20px;">
+                            <!-- <form action="#" method="POST"> -->
+                                <!-- <a href="/logout" class='sidebar-link'> -->
+                                    <button type="submit" @click="logout" class="sidebar-link" style="border: 0pt;">
+                                        <i class="bi bi-box-arrow-left"></i>
+                                        <span>Logout</span>
+                                    </button>
+                                <!-- </a> -->
+                            <!-- </form> -->
                         </li>
                     </ul>
                 </div>
@@ -74,9 +76,39 @@
 </template>
 
 <script>
+    import axios from 'axios'
+    import Swal from 'sweetalert2'
+
     export default {
         name: "dashboard-main",
+        methods: {
+        logout(){
+                const token = localStorage.getItem('token')
+                axios
+                .request({
+                    url: 'http://127.0.0.1:8000/api/logout',
+                    method: 'post',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Authorization': 'Bearer '+token,
+                    }
+                })
+                .then((response) => {
+                    console.log(response)
+                    Swal.fire("berhasil logout !")
+                    localStorage.removeItem('loggedIn');
+                    localStorage.removeItem('token');
+                    return this.$router.push({ name: 'Login' })
+                })
+                .catch((error) => {
+                    console.log(error.message)
+                    Swal.fire("Error logout !!")
+                })
+                
+            }
     }
+    }
+    
 </script>
 
 <style scoped>

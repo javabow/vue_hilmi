@@ -47,12 +47,12 @@
             },
             postLogin(){
                 axios
-                .get('https://api.farhandika.com/sanctum/csrf-cookie')
+                .get('http://127.0.0.1:8000/sanctum/csrf-cookie')
                 .then(response => {
                     console.log(response)
                     axios
                     .request({
-                        url: 'https://api.farhandika.com/api/login',
+                        url: 'http://127.0.0.1:8000/api/login',
                         method: 'post',
                         data: this.formData,
                         headers: {
@@ -63,7 +63,12 @@
                         localStorage.setItem("loggedIn", "true")
                         localStorage.setItem("token", response.data.access_token)
                         // console.log(response);
-                        return this.$router.push({ name: 'Dashboard' })
+                        if (this.formData.email == "farhandika@gmail.com") {
+                            return this.$router.push({ name: 'inventory' })
+                        }else{
+                            return this.$router.push({ name: 'Dashboard' })
+                        }
+                        
                     })
                     .catch((error) => {
                         console.log(error.message)
