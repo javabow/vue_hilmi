@@ -190,7 +190,7 @@ export default {
                     this.formData.id = this.row.id
                     console.log(this.dataProduct)
                     console.log(this.nama_barang)
-                    Swal.fire("berhasil !")
+                    // Swal.fire("berhasil !")
                 })
                 .catch((error) => {
                     console.log(error.message)
