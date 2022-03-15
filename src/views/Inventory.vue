@@ -127,7 +127,7 @@ export default {
             },
             nama_barang: "wkwkwk",    
         datatable: {
-            url: 'http://127.0.0.1:8000/api/data-product',
+            url: 'https://api.farhandika.com/api/data-product',
             requestOptions: {
             method: 'GET',
             headers: {
@@ -196,12 +196,12 @@ export default {
         addInventoryItem(){
             const token = localStorage.getItem('token')
                 axios
-                .get('http://127.0.0.1:8000/sanctum/csrf-cookie')
+                .get('https://api.farhandika.com/sanctum/csrf-cookie')
                 .then(response => {
                     console.log(response)
                     axios
                     .request({
-                        url: 'http://127.0.0.1:8000/api/product-insert',
+                        url: 'https://api.farhandika.com/api/product-insert',
                         method: 'post',
                         data: this.formDataAdd,
                         headers: {

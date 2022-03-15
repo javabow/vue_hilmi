@@ -144,12 +144,12 @@ export default {
         updateInventoryItem(){
             const token = localStorage.getItem('token')
                 axios
-                .get('http://127.0.0.1:8000/sanctum/csrf-cookie')
+                .get('https://api.farhandika.com/sanctum/csrf-cookie')
                 .then(response => {
                     console.log(response)
                     axios
                     .request({
-                        url: 'http://127.0.0.1:8000/api/product-update',
+                        url: 'https://api.farhandika.com/api/product-update',
                         method: 'post',
                         data: this.formData,
                         headers: {
@@ -174,7 +174,7 @@ export default {
             const token = localStorage.getItem('token')
                 axios
                 .request({
-                    url: 'http://127.0.0.1:8000/api/get-single-data-product/'+this.row.id,
+                    url: 'https://api.farhandika.com/api/get-single-data-product/'+this.row.id,
                     method: 'get',
                     headers: {
                         'Accept': 'application/json',
@@ -201,12 +201,12 @@ export default {
             const token = localStorage.getItem('token')
             this.formDeleteData.id_delete = this.row.id
                 axios
-                .get('http://127.0.0.1:8000/sanctum/csrf-cookie')
+                .get('https://api.farhandika.com/sanctum/csrf-cookie')
                 .then(response => {
                     console.log(response)
                     axios
                     .request({
-                        url: 'http://127.0.0.1:8000/api/product-delete',
+                        url: 'https://api.farhandika.com/api/product-delete',
                         method: 'post',
                         data: this.formDeleteData,
                         headers: {

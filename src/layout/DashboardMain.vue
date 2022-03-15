@@ -86,7 +86,7 @@
                 const token = localStorage.getItem('token')
                 axios
                 .request({
-                    url: 'http://127.0.0.1:8000/api/logout',
+                    url: 'https://api.farhandika.com/api/logout',
                     method: 'post',
                     headers: {
                         'Accept': 'application/json',

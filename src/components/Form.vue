@@ -79,9 +79,9 @@
         methods: {
             createPost() {
                 axios
-                // .post('http://127.0.0.1:8000/api/report/insert', this.formData)
+                // .post('https://api.farhandika.com/api/report/insert', this.formData)
                 .request({
-                    url: 'http://127.0.0.1:8000/api/report/insert',
+                    url: 'https://api.farhandika.com/api/report/insert',
                     method: 'post',
                     data: this.formData,
                     // baseURL: 'https://preview-deliver.kenticocloud.com/PROJECT_ID',
